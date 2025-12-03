@@ -18,5 +18,6 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	init_stack_a(&a, argc, argv);
+	free_stack(&a);
 	return (0);
 }
