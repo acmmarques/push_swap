@@ -45,5 +45,8 @@ void	free_stack_matrix_and_perror(t_stack_node **a, char **tokens);
 void	init_stack_a(t_stack_node **a, int argc, char **argv);
 char	**parse_input(int argc, char **argv);
 void	print_error(void);
+void	sa(t_stack_node **stack);
+void	sb(t_stack_node **stack);
+void	ss(t_stack_node **stack_a, t_stack_node **stack_b);
 
 #endif
