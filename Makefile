@@ -1,8 +1,8 @@
 NAME = push_swap
 
 SRCS = push_swap.c  input_validator.c stack_init.c \
-		swap.c push.c \
-		utils_one.c utils_two.c utils_three.c utils_four.c \
+		swap.c push.c rotate.c \
+		utils_one.c utils_two.c utils_three.c utils_four.c utils_five.c\
 
 OBJS = $(SRCS:.c=.o)
 

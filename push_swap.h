@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 14:18:20 by andcardo          #+#    #+#             */
-/*   Updated: 2025/12/03 12:25:55 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:08:53 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,14 @@ void	free_stack_matrix_and_perror(t_stack_node **a, char **tokens);
 void	init_stack_a(t_stack_node **a, int argc, char **argv);
 char	**parse_input(int argc, char **argv);
 void	print_error(void);
+t_stack_node	*find_last(t_stack_node *head);
 void	sa(t_stack_node **stack);
 void	sb(t_stack_node **stack);
 void	ss(t_stack_node **stack_a, t_stack_node **stack_b);
 void	pa(t_stack_node **stack_a, t_stack_node **stack_b);
 void	pb(t_stack_node **stack_a, t_stack_node **stack_b);
+void	ra(t_stack_node **stack);
+void	rb(t_stack_node **stack);
+void	rr(t_stack_node **stack_a, t_stack_node **stack_b);
 
 #endif
