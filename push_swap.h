@@ -48,5 +48,7 @@ void	print_error(void);
 void	sa(t_stack_node **stack);
 void	sb(t_stack_node **stack);
 void	ss(t_stack_node **stack_a, t_stack_node **stack_b);
+void	pa(t_stack_node **stack_a, t_stack_node **stack_b);
+void	pb(t_stack_node **stack_a, t_stack_node **stack_b);
 
 #endif
