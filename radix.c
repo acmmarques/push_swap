@@ -49,7 +49,7 @@ int	list_len(t_stack_node **stack)
 
 void	sort_three(t_stack_node **a)
 {
-	t_stack_node *biggest_node;
+	t_stack_node	*biggest_node;
 
 	biggest_node = *a;
 	if ((*a)->next->index > biggest_node->index)
@@ -66,17 +66,21 @@ void	sort_three(t_stack_node **a)
 
 void	sort_five(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node *smallest;
+	t_stack_node	*smallest;
 
 	while (list_len(a) > 3)
 	{
-		smallest = find_smallest(*a); 
-		if (smallest->above_median) // Check if node is in top half
+		smallest = find_smallest_node(*a);
+		if (get_node_position(smallest) <= (list_len(a) / 2))
+		{
 			while (*a != smallest)
 				ra(a);
-			else
+		}
+		else
+		{
 			while (*a != smallest)
 				rra(a);
+		}
 		pb(a, b);
 	}
 	sort_three(a);

@@ -47,6 +47,9 @@ long	ft_atol(const char *str)
 	while (ft_isdigit(str[i]))
 	{
 		res = res * 10 + (str[i] - 48);
+		if (((res > INT_MAX) && (sign == 1))
+			|| ((res > (long)INT_MAX + 1) && (sign == -1)))
+			return ((long)INT_MAX + 1);
 		i++;
 	}
 	return (res * sign);

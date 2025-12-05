@@ -40,18 +40,6 @@ static int	validate_argument_number_and_empty_strs(int argc, char **argv)
 	return (1);
 }
 
-void	print_ll(t_stack_node *stack)
-{
-	t_stack_node	*head;
-
-	head = stack;
-	while (head)
-	{
-		printf("index: %i|| value: %i \n", head->index, head->value);
-		head = head->next;
-	}
-}
-
 static char	**fill_tokens(char **argv)
 {
 	char	**matrix;

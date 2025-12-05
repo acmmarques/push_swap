@@ -18,10 +18,6 @@
 # include <stddef.h>
 # include <limits.h>
 
-//REMOVER DEPOIS
-# include <stdio.h>
-//FIM REMOVER DEPOIS
-
 typedef struct s_stack_node
 {
 	int					value;
@@ -63,5 +59,7 @@ int				list_len(t_stack_node **stack);
 void			radix_sort(t_stack_node **a, t_stack_node **b);
 void			sort_three(t_stack_node **a);
 void			sort_five(t_stack_node **a, t_stack_node **b);
+t_stack_node	*find_smallest_node(t_stack_node *a);
+int				get_node_position(t_stack_node *a);
 
 #endif

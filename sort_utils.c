@@ -44,3 +44,32 @@ void	set_index(t_stack_node *stack)
 		current_node = current_node->next;
 	}
 }
+
+t_stack_node	*find_smallest_node(t_stack_node *a)
+{
+	t_stack_node	*head;
+	t_stack_node	*smallest;
+
+	head = a;
+	smallest = a;
+	while (head)
+	{
+		if (head->index < smallest->index)
+			smallest = head;
+		head = head->next;
+	}
+	return (smallest);
+}
+
+int	get_node_position(t_stack_node *a)
+{
+	int	i;
+
+	i = 0;
+	while (a->prev)
+	{
+		i++;
+		a = a->prev;
+	}
+	return (i);
+}

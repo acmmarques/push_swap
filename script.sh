@@ -1,0 +1,1 @@
+var=$(echo $(seq 97 | shuf)  2147483647 -2147483648 0) && ./push_swap $var > tmp.txt && echo $var >> log.txt && cat tmp.txt >> log.txt && cat tmp.txt | wc -l >> log.txt && cat tmp.txt | ./checker_linux $var >> log.txt && echo >> log.txt && cat tmp.txt | wc -l >> justn
