@@ -66,8 +66,22 @@ void	sort_three(t_stack_node **a)
 
 void	sort_five(t_stack_node **a, t_stack_node **b)
 {
-	a = a;
-	b = b;
+	t_stack_node *smallest;
+
+	while (list_len(a) > 3)
+	{
+		smallest = find_smallest(*a); 
+		if (smallest->above_median) // Check if node is in top half
+			while (*a != smallest)
+				ra(a);
+			else
+			while (*a != smallest)
+				rra(a);
+		pb(a, b);
+	}
+	sort_three(a);
+	while (*b)
+		pa(a, b);
 }
 
 void	radix_sort(t_stack_node **a, t_stack_node **b)
