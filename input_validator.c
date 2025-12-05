@@ -6,7 +6,7 @@
 /*   By: andcardo <andcardo@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:47:48 by andcardo          #+#    #+#             */
-/*   Updated: 2025/12/03 01:48:21 by andcardo         ###   ########.fr       */
+/*   Updated: 2025/12/04 22:45:12 by andcardo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,15 @@ static int	validate_argument_number_and_empty_strs(int argc, char **argv)
 	return (1);
 }
 
-static void	print_matrix(char **matrix)
+void	print_ll(t_stack_node *stack)
 {
-	int	i;
-	int	j;
+	t_stack_node	*head;
 
-	i = 0;
-	j = 0;
-	while (matrix[i])
-		i++;
-	printf("Transformed into an array: \n");
-	while (j < i)
+	head = stack;
+	while (head)
 	{
-		printf("%s \n", matrix[j]);
-		j++;
+		printf("index: %i|| value: %i \n", head->index, head->value);
+		head = head->next;
 	}
 }
 
@@ -74,14 +69,12 @@ static char	**fill_tokens(char **argv)
 			return (print_error(), NULL);
 		i++;
 	}
-	printf("String completo: %s\n", huge_str);
 	matrix = ft_split(huge_str, ' ');
 	if (!matrix)
 	{
 		print_error();
 		exit(1);
 	}
-	print_matrix(matrix);
 	free(huge_str);
 	return (matrix);
 }
