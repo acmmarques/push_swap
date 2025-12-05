@@ -47,10 +47,21 @@ int	list_len(t_stack_node **stack)
 	return (i);
 }
 
-
 void	sort_three(t_stack_node **a)
 {
-	a = a;
+	t_stack_node *biggest_node;
+
+	biggest_node = *a;
+	if ((*a)->next->index > biggest_node->index)
+		biggest_node = (*a)->next;
+	if ((*a)->next->next->index > biggest_node->index)
+		biggest_node = (*a)->next->next;
+	if (biggest_node == *a)
+		ra(a);
+	else if (biggest_node == (*a)->next)
+		rra(a);
+	if ((*a)->index > (*a)->next->index)
+		sa(a);
 }
 
 void	sort_five(t_stack_node **a, t_stack_node **b)
@@ -61,14 +72,12 @@ void	sort_five(t_stack_node **a, t_stack_node **b)
 
 void	radix_sort(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*head_a;
 	int				i;
 	int				j;
 	int				size;
 	int				bits_number;
 
 	i = 0;
-	head_a = *a;
 	size = list_len(a);
 	bits_number = get_bits_number(a);
 	while (i < bits_number)
@@ -76,8 +85,7 @@ void	radix_sort(t_stack_node **a, t_stack_node **b)
 		j = 0;
 		while (j < size)
 		{
-			head_a = *a;
-			if (((head_a->index >> i) & 1) == 1)
+			if ((((*a)->index >> i) & 1) == 1)
 				ra(a);
 			else
 				pb(a, b);

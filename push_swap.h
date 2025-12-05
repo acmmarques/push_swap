@@ -64,8 +64,4 @@ void			radix_sort(t_stack_node **a, t_stack_node **b);
 void			sort_three(t_stack_node **a);
 void			sort_five(t_stack_node **a, t_stack_node **b);
 
-//REMOVER DEPOIS
-void	print_ll(t_stack_node *stack);
-//FIM REMOVER DEPOIS
-
 #endif

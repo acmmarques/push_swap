@@ -22,7 +22,6 @@ int	main(int argc, char **argv)
 	b = NULL;
 	init_stack_a(&a, argc, argv);
 	stack_size = list_len(&a);
-	print_ll(a);
 	set_index(a);
 	if (is_stack_sorted(a))
 	{
@@ -37,7 +36,6 @@ int	main(int argc, char **argv)
 		sort_five(&a, &b);
 	else
 		radix_sort(&a, &b);
-	print_ll(a);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);
