@@ -109,7 +109,8 @@ void	init_stack_a(t_stack_node **a, int argc, char **argv)
 			free_stack_matrix_and_perror(a, tokens);
 		if (duplication_exists(*a, (int)nbr))
 			free_stack_matrix_and_perror(a, tokens);
-		append_node(a, (int)nbr);
+		if (!append_node(a, (int)nbr))
+			free_stack_matrix_and_perror(a, tokens);
 		i++;
 	}
 	free_array(tokens, array_len(tokens));

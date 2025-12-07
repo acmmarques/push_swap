@@ -60,6 +60,7 @@ static char	**fill_tokens(char **argv)
 	matrix = ft_split(huge_str, ' ');
 	if (!matrix)
 	{
+		free(huge_str);
 		print_error();
 		exit(1);
 	}
